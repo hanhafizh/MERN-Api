@@ -1,0 +1,18 @@
+Standar API
+
+{root.api}/{version}/{grouping}/{endpoint}
+SAMPLE:
+http://mern-api.farhan.com/v1/auth/login
+
+
+Group : Authentication
+
+[1] - Login
+[2] - Register
+
+GROUP: BLOG
+
+[1] - Create Blog post
+[2] - Get Blog post
+[3] - Update Blog post
+[4] - Delete Blog Post
