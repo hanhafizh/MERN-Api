@@ -4,11 +4,45 @@ Standar API
 SAMPLE:
 http://mern-api.farhan.com/v1/auth/login
 
+Standar Status response
+
+200 - OK                        --> Call API Success
+201 - CREATED                   --> Post Succes
+400 - BAD REQUEST               -->  Error on Client Side (Bisa input salah)
+401 - UNAUTHORIZED              --> User not authorized to the REQUEST
+405 - FORBIDDEN                 --> User not allowed to acces
+404 - NOT FOUND                 --> Request Endpoint Not Found
+500 - INTERNAL SERVER ERROR     --> Error on Server Side
+502 - BAD GATEWAY               --> Invalid Response From Another Request
 
 Group : Authentication
 
-[1] - Login
-[2] - Register
+[1] - Register
+{version}/{grouping}/auth/register
+
+req:
+{
+  "nama": "Testing",
+  "email": "test@gmail.com",
+  "password": "123123"
+}
+
+res:
+{
+  "message": "Register Succes",
+  "data": {
+    "id": 1,
+    "nama": "Testing",
+    "email": "test@gmail.com",
+    "password": "123123"
+  }
+}
+
+err-response:
+404 --> Input yang anda masukan tidak valid
+
+[2] - Login
+{version}/{grouping}/auth/login
 
 GROUP: BLOG
 

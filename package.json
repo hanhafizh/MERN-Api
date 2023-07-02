@@ -1,5 +1,5 @@
 {
-  "name": "mern-api",
+  "nama": "mern-api",
   "version": "1.0.0",
   "description": "REST API Node JS (MERN Stack)",
   "main": "index.js",
