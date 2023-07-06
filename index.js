@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const multer = require("multer");
+const path = require("path");
 
 const app = express();
 // import routes
@@ -30,12 +31,16 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
+// body parser
 app.use(bodyParser.json());
+// fix get image
+app.use("/images", express.static(path.join(__dirname, "images")));
 // use multer image
 app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
 );
 
+// agar bisa di allow
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
