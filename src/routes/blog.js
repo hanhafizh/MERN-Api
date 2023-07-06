@@ -25,5 +25,6 @@ router.put(
   ],
   blogController.updateBlogPost
 );
+router.delete("/post/:postId", blogController.deleteBlogPost);
 
 module.exports = router;
